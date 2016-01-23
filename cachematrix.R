@@ -23,7 +23,7 @@ cacheSolve <- function(x=matrix(),...) {
     m <- x$getsolve
     if(!is.null(m)) {
         message("getting cached matrix")
-        return(m)
+        m
     }
     matrix<-x$getmatrix()
     m<-solve(matrix, ...)
