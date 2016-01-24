@@ -6,7 +6,7 @@
 makeCacheMatrix <- function(x = matrix()){ 
     m <<-NULL
         setmatrix <- function (y){
-            y <<- x
+            x <<- y
             m <<- NULL}
         getmatrix <- function()  {x}
         setsolve <- function(solve)  m <<-solve(x)
@@ -25,6 +25,7 @@ cacheSolve <- function(x=matrix(),...) {
         message("getting cached matrix")
         m
     }
+    ##if the inverse is not stored, we get the inverse of the new matrix
     matrix<-x$getmatrix()
     m<-solve(matrix, ...)
     x$setmatrix(m)
